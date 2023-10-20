@@ -1,0 +1,16 @@
+
+<div class="container-fluid">
+    <app-main-form
+        (entries)="entriesData($event)"
+        (enableUpdate)="enableUpdate()">
+    </app-main-form>
+    <br>
+    
+    <app-table-view
+        [entriesFromForm]="entries"
+        (viewUpdate)="changeForm($event)"
+        (userDataFromForm)="changeData()"
+        (disableCreate)="disableCreate($event)">
+    </app-table-view>
+</div>
+

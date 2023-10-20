@@ -1,0 +1,87 @@
+
+<div class="container">
+    <div>
+        <h2><span class="material-symbols-outlined">
+            description
+            </span> Form</h2>
+        <div class="user-form">
+            <!-- User Form -->
+            <form class="form" [formGroup]="userForm">
+                <div class="form-group">
+                    <p><span class="material-symbols-outlined">
+                        person
+                        </span> Username: </p>
+                    <div class="username">
+                        <div>
+                            <input class="form-control" placeholder="First Name" formControlName="firstname">
+                            <p class="error" *ngIf="isSubmitted && userForm.controls.firstname.errors">Invalid First Name</p>
+                        </div>
+                        <div>
+                            <input class="form-control" placeholder="Last Name" formControlName="lastname">
+                            <p class="error" *ngIf="isSubmitted && userForm.controls.lastname.errors">Invalid Last Name</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p><span class="material-symbols-outlined">
+                        calendar_month
+                        </span>Age & Gender: </p>
+                    <div class="age-gender">
+                        <div>
+                            <input onfocus="(this.type='date')" class="form-control date" placeholder="Date of Birth" formControlName="DOB">
+                            <p class="error" *ngIf="isSubmitted && userForm.controls.DOB.errors">Check your Birth Date</p>
+                        </div>
+                        <div class="gender">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="Male">
+                                <p class="form-check-label"><span class="material-symbols-outlined">
+                                    man
+                                </span></p>
+                                
+                                <p class="error error2" *ngIf="isSubmitted && userForm.controls.gender.errors"> !</p>
+                            </div> 
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="Female">
+                                <p class="form-check-label"><span class="material-symbols-outlined">
+                                    woman
+                                    </span></p>
+                                <p class="error error2" *ngIf="isSubmitted && userForm.controls.gender.errors"> !</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p><span class="material-symbols-outlined">
+                        explore
+                        </span>Address Information: </p>
+                    <div class="address">                        
+                        <input class="form-control no" placeholder="House No" formControlName="houseno">
+                        <input class="form-control zip" placeholder="Pincode" formControlName="zip">
+                    </div>
+                    <input class="form-control street" placeholder="Street Name" formControlName="street">
+                    <p class="error" *ngIf="isSubmitted && userForm.controls.street.errors && userForm.controls.zip.errors">Check your Residential Address</p>
+                </div>
+
+                <div class="form-group">
+                    <p><span class="material-symbols-outlined">
+                        contact_support
+                        </span>Contact Information: </p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Email Address" formControlName="mail">
+                    <p class="error" *ngIf="isSubmitted && userForm.controls.mail.errors">Invalid Email Address</p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Contact No" formControlName="contactno">
+                    <p class="error" *ngIf="isSubmitted && userForm.controls.contactno.errors">Invalid Phone number</p>
+                </div> 
+            </form>
+
+            <div class="form-2">
+                <button class="btn btn-primary" (click)="formData();" [disabled]="isdisable">{{actionBtn}}</button>
+                <button class="btn btn-primary" *ngIf="actionBtn == 'Update'" (click)="abortUpdate()">Cancel</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

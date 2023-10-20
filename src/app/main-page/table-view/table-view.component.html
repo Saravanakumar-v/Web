@@ -1,0 +1,51 @@
+
+<div>
+    <div>
+        <h2><span class="material-symbols-outlined">table</span> Entries</h2>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr class="th">
+                    <th>Sl.No</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tr class="td" *ngFor="let entry of entriesFromForm;let index=index">
+                <td>{{index+1}}</td>
+                <td>{{entry.firstname + " " + entry.lastname}}</td>
+                <td>{{entry.DOB}}</td>
+                <td>{{entry.gender}}</td>
+                <td>{{"No: "+ entry.houseno + ", " + entry.street+ ", " + entry.zip}}</td>
+                <td>{{entry.mail}}</td>
+                <td>{{entry.contactno}}</td>
+
+                <td><button class="btn edit" (click)="updateEntry(index)" [disabled]="isdisable"><span class="material-symbols-outlined">
+                    edit
+                    </span></button></td>
+                <td><button class="btn delete" (click)="popUp(index)" [disabled]="isdisable"><span class="material-symbols-outlined">
+                    delete
+                    </span></button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="dialog" @slide *ngIf="dialog">
+        <span class="material-symbols-outlined" (click)="dialog = false;isdisable= false;disableCreate.emit(false);">
+            close
+            </span>
+        <p>Are you sure want to delete the entry ? </p>
+        <div class="btns">
+            <button class="btn btn-danger" (click)="deleteEntry(setIndex)">Yes</button>
+            <button class="btn btn-primary" (click)="dialog = false;isdisable= false;disableCreate.emit(false);">Cancel</button>
+        </div>
+    </div>
+</div>

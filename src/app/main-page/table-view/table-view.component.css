@@ -1,0 +1,33 @@
+
+
+
+.dialog {
+    border-radius: 10px;
+    padding: 25px;
+    width: fit-content;
+    position: absolute;
+    top: 200px;
+    right: 5%;
+    left: 5%;
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.dialog > .material-symbols-outlined {
+    float: right;
+    cursor: pointer;
+}
+
+.dialog > .btns {
+    display: flex;
+    gap: 10px;
+}
+
+.delete {
+    color: red;
+}
+
+.edit {
+    color: blue;
+}

@@ -1,0 +1,80 @@
+
+.user-form {
+    padding: 10px;
+    /* background-color: #ebe5da; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-group >  p {
+    display: flex;  
+    gap: 3px;
+}
+
+.form-2 {
+    display: flex;
+    gap: 5px;
+}
+
+.qualification,.username {
+    display: flex;
+    gap: 10px;
+}
+
+.stream {
+    width: 240px;
+}
+
+.age-gender {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.gender {
+    display: flex;
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.form-group {
+    width: 350px;
+}
+
+.degree {
+    width: 100px;
+}
+
+.date {
+    width: 155px;
+}
+
+.address {
+    display: flex;
+    gap: 10px;
+}
+
+.no {
+    width: 100px;
+}
+
+.street {
+    margin-top: 10px;
+}
+
+.error {
+    font-weight: 500;
+    font-size: smaller;
+    color: red;
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+.error2 {
+    font-size: large;
+}
+
+.user-form {
+    width: fit-content;
+    padding: 20px;
+    border-radius: 5px;
+}
